@@ -5,7 +5,7 @@ cheatsheet do
   source_url 'http://cheat.kapeli.com'
 
   introduction <<-'END'
-    My keymappings for the kitty terminal based on my [kitty config file](https://github.com/genzj/dotfiles/blob/main/src/dot_config/kitty/kitty.conf.tmpl).
+    My keymappings for the kitty terminal. Shortcuts marked by ⚙️ are defined in my [kitty config file](https://github.com/genzj/dotfiles/blob/main/src/dot_config/kitty/kitty.conf.tmpl). The rest are defined by [the default kitty config](https://sw.kovidgoyal.net/kitty/conf/).
   END
 
 
@@ -19,7 +19,7 @@ cheatsheet do
   end
 
   category do
-    id 'Kitty Window (within the same Tab)'
+    id 'Kitty Window (Within The Same Tab)'
 
     entry do
       command 'mod+enter'
@@ -59,6 +59,11 @@ cheatsheet do
     end
 
     entry do
+      command 'mod+l'
+      name 'Next layout'
+    end
+
+    entry do
       command 'mod+r'
       command 'cmd+r 🍎'
       name 'Start resizing a kitty window'
@@ -85,18 +90,84 @@ cheatsheet do
   end
 
   category do
-    id 'Tab'
+    id 'OS Window'
 
     entry do
-      command '-eq'
-      name 'is equal to'
-      notes '`if [ "$a" -eq "$b" ]`'
+      command 'mod+n'
+      command 'cmd+n 🍎'
+      name 'New OS window'
+    end
+
+    entry do
+      command 'shift+cmd+w 🍎'
+      name 'Close OS window'
+    end
+
+    entry do
+      command 'mod+f10'
+      name 'Toggle maximized'
+    end
+
+    entry do
+      command 'mod+f11'
+      name 'Toggle fullscreen'
     end
   end
 
+  category do
+    id 'Tab'
+
+    entry do
+      command 'mod+t'
+      command 'cmd+t 🍎'
+      name 'New tab'
+    end
+
+    entry do
+      command 'mod+q'
+      command 'cmd+w 🍎'
+      name 'Close tab'
+      notes '`mod+w` is used to close a kitty window. And the tab will also be closed after the last kitty window being closed.'
+    end
+
+    entry do
+      command 'mod+right'
+      command 'ctrl+tab'
+      command 'shift+cmd+] 🍎'
+      name 'Next tab'
+    end
+
+    entry do
+      command 'mod+left'
+      command 'ctrl+shift+tab'
+      command 'shift+cmd+[ 🍎'
+      name 'Previous tab'
+    end
+
+    entry do
+      command 'mod+.'
+      name 'Move current tab forward'
+    end
+
+    entry do
+      command 'mod+,'
+      name 'Move current tab backward'
+    end
+
+    entry do
+      command 'mod+alt+t'
+      command 'shift+cmd+i 🍎'
+      name 'Set tab title'
+    end
+
+    entry do
+      command 'mod+f9 ⚙️'
+      name 'Interactively select a tab from a list'
+    end
+  end
 
   category do
-    id 'Select and act on visible text'
+    id 'Select And Act On Visible Text'
 
     entry do
       command 'mod+e'
@@ -133,23 +204,13 @@ cheatsheet do
     end
 
     entry do
-      command 'mod+p>c'
+      command 'mod+p>c ⚙️'
       name 'Copy selected **line** to system clipboard'
     end
 
     entry do
-      command 'mod+p>shift+c'
+      command 'mod+p>shift+c ⚙️'
       name 'Copy selected **word** to system clipboard'
-    end
-  end
-
-  category do
-    id 'Misc UI'
-
-    entry do
-      command '-eq'
-      name 'is equal to'
-      notes '`if [ "$a" -eq "$b" ]`'
     end
   end
 
@@ -211,7 +272,7 @@ cheatsheet do
   end
 
   category do
-    id 'Pipe buffer'
+    id 'Pipe Buffer'
 
     entry do
       command 'mod+h'
@@ -220,6 +281,96 @@ cheatsheet do
     entry do
       command 'mod+g'
       name 'Browse output of the last shell command in pager'
+    end
+  end
+
+  category do
+    id 'Font Size'
+
+    entry do
+      command 'mod+equal (=)'
+      command 'mod+plus (+)'
+      command 'mod+kp_add (Numpad+)'
+      command 'cmd+equal (=) 🍎'
+      command 'cmd+plus (+) 🍎'
+      command 'shift+cmd+equal (=) 🍎'
+      name 'Increase font size'
+    end
+
+    entry do
+      command 'mod+minus (-)'
+      command 'mod+kp_subtract (Numpad-)'
+      command 'cmd+minus (-) 🍎'
+      command 'shift+cmd+minus (-) 🍎'
+      name 'Decrease font size'
+    end
+
+    entry do
+      command 'mod+backspace'
+      command 'cmd+0 🍎'
+      name 'Reset font size'
+    end
+  end
+
+  category do
+    id 'Background Opacity'
+
+    entry do
+      command 'mod+a>m'
+      name 'Increase background opacity'
+    end
+
+    entry do
+      command 'mod+a>l'
+      name 'Decrease background opacity'
+    end
+
+    entry do
+      command 'mod+a>1'
+      name 'Set background opacity to 1 (fully opaque)'
+    end
+
+    entry do
+      command 'mod+a>d'
+      name 'Reset background opacity'
+    end
+  end
+
+  category do
+    id 'Misc UI'
+
+    entry do
+      command 'mod+esc'
+      name 'Open the kitty command shell'
+    end
+
+    entry do
+      command 'mod+f1'
+      name 'Show documentation'
+    end
+
+    entry do
+      command 'mod+f2'
+      command 'cmd+, 🍎'
+      name 'Edit config file'
+    end
+
+    entry do
+      command 'mod+f5'
+      command 'ctrl+cmd+, 🍎'
+      name 'Load config file'
+    end
+
+    entry do
+      command 'mod+f6'
+      command 'opt+cmd+, 🍎'
+      name 'Debug config file'
+    end
+
+    entry do
+      command 'mod+u'
+      command 'ctrl+cmd+space 🍎'
+      name 'Unicode input'
     end
   end
 
