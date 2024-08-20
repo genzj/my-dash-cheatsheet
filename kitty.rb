@@ -340,6 +340,12 @@ cheatsheet do
     id 'Misc UI'
 
     entry do
+      command 'mod+backspace'
+      command 'opt+cmd+r 🍎'
+      name 'Reset the terminal'
+    end
+
+    entry do
       command 'mod+esc'
       name 'Open the kitty command shell'
     end
