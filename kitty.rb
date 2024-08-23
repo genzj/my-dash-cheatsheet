@@ -340,7 +340,7 @@ cheatsheet do
     id 'Misc UI'
 
     entry do
-      command 'mod+backspace'
+      command 'mod+del'
       command 'opt+cmd+r 🍎'
       name 'Reset the terminal'
     end
