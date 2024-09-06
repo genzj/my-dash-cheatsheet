@@ -124,6 +124,12 @@ cheatsheet do
     end
 
     entry do
+      command 'mod+y'
+      name 'Clone tab'
+      notes 'Note that this only copies the environment when the window was first created, as it is not possible to get updated environment variables from arbitrary processes. To copy that environment, use the `clone-in-kitty` shell function'
+    end
+
+    entry do
       command 'mod+q'
       command 'cmd+w 🍎'
       name 'Close tab'
